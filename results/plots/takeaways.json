@@ -1,0 +1,30 @@
+{
+  "p1_recursive_calls.png": {
+    "title": "P1 - Recursive Edit Distance: number of recursive calls",
+    "takeaway": "On the worst-case input the calls multiply by about 5.6 for every +1 in n (n=14: 11,885,772,379 calls), while identical strings need only n+1 (15 calls): the input decides everything."
+  },
+  "p2_recursive_time.png": {
+    "title": "P2 - Recursive Edit Distance: running time",
+    "takeaway": "Time follows the call counter: from n=9 on, every call costs about 1.7-1.8 ns, so n=14 on the worst case already takes 20.7 s. (Identical strings need about 0.001 ms or less (median), some are even rounded to 0, so they are not drawn on this log axis.)"
+  },
+  "p3_dp_time.png": {
+    "title": "P3 - Table vs Two rows: running time",
+    "takeaway": "Both versions grow roughly like n^2 (two rows: x4.1 when n doubles), but at n=4000 the full table needs about 96 ms and two rows about 38 ms (2.5x faster) although both compute the same 16,000,000 cells."
+  },
+  "p4_dp_memory.png": {
+    "title": "P4 - Memory really allocated by the Edit Distance tables",
+    "takeaway": "At n=4000 the full table allocates 16,008,001 cells and two rows only 8,002: 2,000 times less, and the gap grows with n because one line is quadratic and the other is linear."
+  },
+  "p5_search_comparisons.png": {
+    "title": "P5 - Character comparisons per text character (n=1,600,000, m=100)",
+    "takeaway": "aaab_worst is the slowest input for Naive: 100.0 comparisons per text character (about m), while KMP never goes above 2.00 (the theory limit is 2) - 50 times fewer comparisons on that input; on random text the gap is small (1.04 vs 1.04 on random26, 2.00 vs 1.43 on random2)."
+  },
+  "p6_search_time.png": {
+    "title": "P6 - String search: running time (m=100)",
+    "takeaway": "On aaab_worst Naive needs 73 ms and KMP 3.2 ms at n=1,600,000 (23x), a smaller gap than the 50x in comparisons, because one Naive comparison costs 0.45 ns and one KMP comparison 1.01 ns. The random2 curves bend at the same n for both algorithms, so this is not an algorithm effect (most likely machine noise)."
+  },
+  "p7_search_pattern_length.png": {
+    "title": "P7 - Does the pattern length matter? (n=1,000,000)",
+    "takeaway": "Naive on aaab_worst grows in step with m (10.0 at m=10 to 160.0 at m=160); KMP stays at 2.0 for every m; on random26 Naive and KMP lie on top of each other near 1.04."
+  }
+}
